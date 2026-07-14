@@ -378,7 +378,6 @@ Double-check `backend/.env` is **not** tracked (`git status` should not show it 
 - [ ] Generate a concept explanation in each of the 5 styles
 - [ ] Generate a 5/10/15 question quiz, submit it, confirm scoring and explanations
 - [ ] Paste text into the Summarizer, confirm all 4 summary types work, download .txt
-- [ ] Generate a learning path, mark topics complete, confirm progress % updates
 - [ ] Toggle Light/Dark theme, refresh page → preference persists
 - [ ] Resize browser to mobile width → sidebar collapses into a toggle-able drawer
 - [ ] Log out → redirected to landing page, protected pages redirect to login
