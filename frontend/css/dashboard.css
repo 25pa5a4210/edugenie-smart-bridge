@@ -1,0 +1,82 @@
+/* ==========================================================================
+   EduGenie Dashboard & App Pages
+   ========================================================================== */
+
+.page-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-lg); flex-wrap: wrap; gap: var(--space-sm); }
+.page-header h2 { margin-bottom: 0.2rem; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); margin-bottom: var(--space-lg); }
+.stat-card { text-align: left; }
+.stat-value { font-family: var(--font-display); font-size: var(--fs-2xl); color: var(--color-ink); }
+.stat-label { font-size: var(--fs-xs); color: var(--color-ink-muted); }
+
+.quick-actions-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-sm); margin-bottom: var(--space-lg); }
+.quick-action { text-align: center; cursor: pointer; padding: var(--space-md); }
+.quick-action .card-icon { margin: 0 auto var(--space-xs); }
+
+.dashboard-columns { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-md); align-items: start; }
+
+.activity-item { display: flex; gap: var(--space-sm); align-items: center; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border-soft); }
+.activity-item:last-child { border-bottom: none; }
+.activity-icon { width: 36px; height: 36px; border-radius: var(--radius-sm); background: var(--color-bg-elevated-2); display: flex; align-items: center; justify-content: center; color: var(--color-accent); flex-shrink: 0; }
+.activity-icon svg { width: 18px; height: 18px; }
+.activity-meta { font-size: var(--fs-2xs); color: var(--color-ink-faint); }
+
+/* ---------- Chat / Assistant ---------- */
+.chat-shell { display: flex; flex-direction: column; height: calc(100vh - var(--header-height) - var(--space-lg) * 2); max-height: 780px; }
+.chat-messages { flex: 1; overflow-y: auto; padding: var(--space-md) 0; display: flex; flex-direction: column; gap: var(--space-md); }
+.chat-msg { max-width: 78%; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); font-size: var(--fs-sm); line-height: var(--lh-snug); white-space: pre-wrap; position: relative; }
+.chat-msg.user { align-self: flex-end; background: var(--color-accent); color: var(--color-accent-ink); border-bottom-right-radius: 4px; }
+.chat-msg.assistant { align-self: flex-start; background: var(--color-bg-elevated); border: 1px solid var(--color-border-soft); border-bottom-left-radius: 4px; }
+.chat-msg-actions { margin-top: var(--space-2xs); display: flex; gap: var(--space-xs); }
+.chat-msg-actions button { font-size: var(--fs-2xs); background: none; border: none; color: var(--color-ink-faint); cursor: pointer; }
+.chat-msg-actions button:hover { color: var(--color-accent); }
+.chat-input-row { display: flex; gap: var(--space-sm); padding-top: var(--space-sm); border-top: 1px solid var(--color-border-soft); }
+.chat-input-row .textarea { min-height: 48px; max-height: 140px; }
+.suggested-questions { display: flex; flex-wrap: wrap; gap: var(--space-2xs); margin-bottom: var(--space-md); }
+
+/* ---------- Concept explainer result ---------- */
+.concept-result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-top: var(--space-lg); }
+.concept-block h4 { color: var(--color-accent); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em; font-family: var(--font-body); font-weight: var(--fw-semibold); }
+.concept-block.full { grid-column: 1 / -1; }
+
+/* ---------- Quiz ---------- */
+.quiz-progress-row { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-lg); }
+.quiz-progress-row .progress-track { flex: 1; }
+.quiz-option { display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: var(--space-xs); cursor: pointer; transition: all var(--duration-fast); }
+.quiz-option:hover { border-color: var(--color-ink-faint); }
+.quiz-option.selected { border-color: var(--color-accent); background: rgba(242, 184, 75, 0.08); }
+.quiz-option.correct { border-color: var(--color-success); background: rgba(95, 191, 122, 0.1); }
+.quiz-option.incorrect { border-color: var(--color-coral); background: rgba(232, 115, 95, 0.1); }
+.quiz-option-letter { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-size: var(--fs-xs); flex-shrink: 0; }
+.quiz-nav-row { display: flex; justify-content: space-between; margin-top: var(--space-lg); }
+.score-ring-wrap { text-align: center; padding: var(--space-lg) 0; }
+.score-ring { width: 140px; height: 140px; margin: 0 auto var(--space-md); }
+
+/* ---------- Learning path ---------- */
+.phase-card { border-left: 3px solid var(--color-accent); margin-bottom: var(--space-md); }
+.phase-topic-row { display: flex; align-items: center; gap: var(--space-xs); padding: var(--space-2xs) 0; }
+.phase-topic-row input[type="checkbox"] { accent-color: var(--color-accent); width: 16px; height: 16px; }
+.phase-topic-row.completed span { text-decoration: line-through; color: var(--color-ink-faint); }
+.phase-meta-row { display: flex; gap: var(--space-md); font-size: var(--fs-xs); color: var(--color-ink-faint); margin-top: var(--space-sm); flex-wrap: wrap; }
+
+/* ---------- History ---------- */
+.history-filters { display: flex; gap: var(--space-2xs); margin-bottom: var(--space-md); flex-wrap: wrap; }
+.history-table-row { display: grid; grid-template-columns: 110px 130px 1fr auto; gap: var(--space-sm); align-items: center; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border-soft); font-size: var(--fs-sm); }
+.history-table-row:last-child { border-bottom: none; }
+
+/* ---------- Auth pages ---------- */
+.auth-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: var(--space-lg); background: var(--gradient-hero); }
+.auth-card { width: 100%; max-width: 440px; }
+.auth-card .logo { justify-content: center; margin-bottom: var(--space-lg); }
+.auth-switch { text-align: center; font-size: var(--fs-sm); margin-top: var(--space-md); }
+.password-strength { height: 4px; border-radius: var(--radius-pill); background: var(--color-bg-elevated-2); margin-top: var(--space-2xs); overflow: hidden; }
+.password-strength-fill { height: 100%; transition: width var(--duration-base), background-color var(--duration-base); }
+
+@media (max-width: 960px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .quick-actions-grid { grid-template-columns: repeat(2, 1fr); }
+  .dashboard-columns { grid-template-columns: 1fr; }
+  .concept-result-grid { grid-template-columns: 1fr; }
+  .history-table-row { grid-template-columns: 1fr; }
+}

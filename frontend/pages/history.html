@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>History — EduGenie</title>
+<script>(function(){var t=localStorage.getItem('edugenie_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell" id="app-shell-root"></div>
+
+<template id="tpl-content">
+  <div class="page-header">
+    <div>
+      <h2>Learning History</h2>
+      <p>Everything you've asked, explained, quizzed, summarized, and mapped out.</p>
+    </div>
+  </div>
+
+  <div class="history-filters" id="historyFilters">
+    <button class="option-pill active" data-type="">All</button>
+    <button class="option-pill" data-type="question">Questions</button>
+    <button class="option-pill" data-type="concept">Concepts</button>
+    <button class="option-pill" data-type="quiz">Quizzes</button>
+    <button class="option-pill" data-type="summary">Summaries</button>
+    <button class="option-pill" data-type="learning_path">Learning Paths</button>
+  </div>
+
+  <div class="card" id="historyListCard">
+    <div id="historyList"></div>
+  </div>
+</template>
+
+<div id="toast-container"></div>
+
+<script src="../js/theme.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/history.js"></script>
+</body>
+</html>

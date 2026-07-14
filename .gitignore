@@ -1,0 +1,48 @@
+# Python artifacts
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+backend/.venv/
+backend/venv/
+
+# Environment variables
+.env
+backend/.env
+.env.*
+
+# Database files
+*.db
+*.sqlite3
+backend/*.db
+
+# Test and coverage
+.pytest_cache/
+backend/.pytest_cache/
+.coverage
+htmlcov/
+
+# Build/dist
+build/
+dist/
+*.egg-info/
+
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# IDE/editor
+.vs/
+.vscode/
+.idea/
+
+# macOS/Windows
+.DS_Store
+frontend/.DS_Store
+Thumbs.db

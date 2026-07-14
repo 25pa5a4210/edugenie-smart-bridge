@@ -1,0 +1,130 @@
+/* ==========================================================================
+   EduGenie Design Tokens
+   Theme concept: "Chalkboard to Clarity" - a slate/chalkboard surface with
+   warm highlighter-amber accents, evoking teaching & annotation without
+   leaning on generic cream/terracotta or neutral dark/acid-green defaults.
+   ========================================================================== */
+
+:root {
+  /* ---- Color: Dark (default) "Chalkboard" ---- */
+  --color-bg: #12181B;              /* deep chalkboard slate */
+  --color-bg-elevated: #182024;      /* card surface, slightly lifted */
+  --color-bg-elevated-2: #1E282C;    /* hover / nested surface */
+  --color-border: #2A363A;
+  --color-border-soft: #223034;
+
+  --color-ink: #F4F1E8;              /* chalk white */
+  --color-ink-muted: #ABB6B4;        /* softer chalk */
+  --color-ink-faint: #6E7A78;
+
+  --color-accent: #F2B84B;           /* highlighter amber - the signature color */
+  --color-accent-strong: #E8A526;
+  --color-accent-ink: #2A1B00;       /* text on top of accent */
+
+  --color-teal: #4FB6A8;             /* secondary accent - chalk teal */
+  --color-coral: #E8735F;            /* tertiary accent - chalk coral, used sparingly for alerts */
+
+  --color-success: #5FBF7A;
+  --color-warning: #F2B84B;
+  --color-danger: #E8735F;
+  --color-info: #4FB6A8;
+
+  --gradient-hero: radial-gradient(circle at 15% 20%, rgba(242, 184, 75, 0.16), transparent 45%),
+                    radial-gradient(circle at 85% 0%, rgba(79, 182, 168, 0.14), transparent 40%);
+
+  /* ---- Typography ---- */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  --fs-2xs: 0.75rem;
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+  --fs-3xl: 3rem;
+  --fs-4xl: 3.75rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+
+  /* ---- Spacing scale ---- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 6.5rem;
+
+  /* ---- Shape & elevation ---- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.28);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.36);
+  --shadow-accent-glow: 0 0 0 1px rgba(242, 184, 75, 0.35), 0 8px 24px rgba(242, 184, 75, 0.12);
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 140ms;
+  --duration-base: 220ms;
+  --duration-slow: 420ms;
+
+  /* ---- Layout ---- */
+  --container-max: 1180px;
+  --sidebar-width: 260px;
+  --header-height: 72px;
+}
+
+/* ---- Light theme override ("Whiteboard") ---- */
+[data-theme="light"] {
+  --color-bg: #FBFAF6;
+  --color-bg-elevated: #FFFFFF;
+  --color-bg-elevated-2: #F2F0E9;
+  --color-border: #E4E1D6;
+  --color-border-soft: #ECEAE0;
+
+  --color-ink: #1C231F;
+  --color-ink-muted: #5B655E;
+  --color-ink-faint: #8B948C;
+
+  --color-accent: #C98A1F;
+  --color-accent-strong: #B57A17;
+  --color-accent-ink: #FFFDF8;
+
+  --color-teal: #2E8E80;
+  --color-coral: #C2503D;
+
+  --gradient-hero: radial-gradient(circle at 15% 20%, rgba(201, 138, 31, 0.10), transparent 45%),
+                    radial-gradient(circle at 85% 0%, rgba(46, 142, 128, 0.10), transparent 40%);
+
+  --shadow-sm: 0 1px 2px rgba(20, 20, 10, 0.06);
+  --shadow-md: 0 8px 24px rgba(20, 20, 10, 0.08);
+  --shadow-lg: 0 20px 48px rgba(20, 20, 10, 0.10);
+  --shadow-accent-glow: 0 0 0 1px rgba(201, 138, 31, 0.30), 0 8px 24px rgba(201, 138, 31, 0.10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

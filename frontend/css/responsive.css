@@ -1,0 +1,19 @@
+/* ==========================================================================
+   EduGenie Responsive Overrides (fine-tuning beyond component-level rules)
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .container { padding: 0 var(--space-sm); }
+  .hero { padding: var(--space-2xl) 0 var(--space-lg); }
+  .hero h1 { font-size: var(--fs-3xl); }
+  .section { padding: var(--space-xl) 0; }
+  .cta-section { padding: var(--space-xl) var(--space-sm); }
+  .page-body { padding: var(--space-sm); }
+  .chat-msg { max-width: 90%; }
+}
+
+@media (max-width: 480px) {
+  .btn-lg { width: 100%; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Paths — EduGenie</title>
+<script>(function(){var t=localStorage.getItem('edugenie_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell" id="app-shell-root"></div>
+
+<template id="tpl-content">
+  <div class="page-header">
+    <div>
+      <h2>Personalized Learning Paths</h2>
+      <p>Tell EduGenie what you want to learn and get a phased roadmap with tasks and progress tracking.</p>
+    </div>
+    <button class="btn btn-primary btn-sm" id="newPathBtn">+ New Learning Path</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="new">Generate New</button>
+    <button class="tab-btn" data-tab="saved">Saved Paths</button>
+  </div>
+
+  <div id="newPathTab">
+    <div class="card">
+      <form id="pathForm">
+        <div class="field">
+          <label class="label" for="topic">Topic or Skill</label>
+          <input class="input" id="topic" placeholder="e.g. SQL, Machine Learning, Spanish" required>
+        </div>
+        <div class="field">
+          <label class="label">Current Knowledge Level</label>
+          <div class="option-pills" id="levelPills">
+            <button type="button" class="option-pill active" data-val="Beginner">Beginner</button>
+            <button type="button" class="option-pill" data-val="Intermediate">Intermediate</button>
+            <button type="button" class="option-pill" data-val="Advanced">Advanced</button>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Learning Goal</label>
+          <div class="option-pills" id="goalPills">
+            <button type="button" class="option-pill active" data-val="Academic Learning">Academic Learning</button>
+            <button type="button" class="option-pill" data-val="Exam Preparation">Exam Preparation</button>
+            <button type="button" class="option-pill" data-val="Interview Preparation">Interview Preparation</button>
+            <button type="button" class="option-pill" data-val="Project Development">Project Development</button>
+            <button type="button" class="option-pill" data-val="Career Skill">Career Skill</button>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Available Study Time</label>
+          <div class="option-pills" id="timePills">
+            <button type="button" class="option-pill active" data-val="1 Week">1 Week</button>
+            <button type="button" class="option-pill" data-val="2 Weeks">2 Weeks</button>
+            <button type="button" class="option-pill" data-val="1 Month">1 Month</button>
+            <button type="button" class="option-pill" data-val="2 Months">2 Months</button>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" id="generateBtn">Generate Roadmap</button>
+      </form>
+    </div>
+    <div id="newPathResult"></div>
+  </div>
+
+  <div id="savedPathTab" class="hidden">
+    <div id="savedPathsList"></div>
+  </div>
+</template>
+
+<div id="toast-container"></div>
+
+<script src="../js/theme.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/learning-path.js"></script>
+</body>
+</html>

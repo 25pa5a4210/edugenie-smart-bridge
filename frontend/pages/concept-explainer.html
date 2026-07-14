@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept Explainer — EduGenie</title>
+<script>(function(){var t=localStorage.getItem('edugenie_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell" id="app-shell-root"></div>
+
+<template id="tpl-content">
+  <div class="page-header">
+    <div>
+      <h2>Concept Explainer</h2>
+      <p>Break down any topic into a definition, analogy, example, and quick recap.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:var(--space-lg);">
+    <form id="conceptForm">
+      <div class="grid grid-2">
+        <div class="field">
+          <label class="label" for="topic">Concept or Topic</label>
+          <input class="input" id="topic" placeholder="e.g. Pythagoras Theorem" required>
+        </div>
+        <div class="field">
+          <label class="label" for="subject">Subject (optional)</label>
+          <input class="input" id="subject" placeholder="e.g. Geometry">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="academic_level">Academic Level</label>
+        <select class="select" id="academic_level" required>
+          <option>School Student</option>
+          <option>Intermediate / Higher Secondary</option>
+          <option selected>Undergraduate</option>
+          <option>Postgraduate</option>
+          <option>Self Learner</option>
+          <option>Educator</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="label">Explanation Style</label>
+        <div class="option-pills" id="stylePills">
+          <button type="button" class="option-pill active" data-style="Simple">Simple</button>
+          <button type="button" class="option-pill" data-style="Detailed">Detailed</button>
+          <button type="button" class="option-pill" data-style="Step-by-Step">Step-by-Step</button>
+          <button type="button" class="option-pill" data-style="Real-Life Example">Real-Life Example</button>
+          <button type="button" class="option-pill" data-style="Exam-Oriented">Exam-Oriented</button>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" id="submitBtn">Explain This Concept</button>
+    </form>
+  </div>
+
+  <div id="resultContainer"></div>
+</template>
+
+<div id="toast-container"></div>
+
+<script src="../js/theme.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/concepts.js"></script>
+</body>
+</html>

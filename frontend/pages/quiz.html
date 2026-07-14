@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Generator — EduGenie</title>
+<script>(function(){var t=localStorage.getItem('edugenie_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell" id="app-shell-root"></div>
+
+<template id="tpl-content">
+  <div class="page-header">
+    <div>
+      <h2>Quiz Generator</h2>
+      <p>Test your understanding with an AI-generated quiz on any topic.</p>
+    </div>
+  </div>
+  <div id="quizArea"></div>
+</template>
+
+<template id="tpl-quiz-form">
+  <div class="card">
+    <form id="quizForm">
+      <div class="grid grid-2">
+        <div class="field">
+          <label class="label" for="topic">Topic</label>
+          <input class="input" id="topic" placeholder="e.g. Python Basics" required>
+        </div>
+        <div class="field">
+          <label class="label" for="subject">Subject (optional)</label>
+          <input class="input" id="subject" placeholder="e.g. Programming">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Difficulty</label>
+        <div class="option-pills" id="difficultyPills">
+          <button type="button" class="option-pill active" data-val="Easy">Easy</button>
+          <button type="button" class="option-pill" data-val="Medium">Medium</button>
+          <button type="button" class="option-pill" data-val="Hard">Hard</button>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Number of Questions</label>
+        <div class="option-pills" id="countPills">
+          <button type="button" class="option-pill active" data-val="5">5</button>
+          <button type="button" class="option-pill" data-val="10">10</button>
+          <button type="button" class="option-pill" data-val="15">15</button>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Quiz Type</label>
+        <div class="option-pills" id="typePills">
+          <button type="button" class="option-pill active" data-val="Multiple Choice Questions">Multiple Choice</button>
+          <button type="button" class="option-pill" data-val="True or False">True or False</button>
+          <button type="button" class="option-pill" data-val="Mixed Quiz">Mixed</button>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg" id="generateBtn">Generate Quiz</button>
+    </form>
+  </div>
+</template>
+
+<div id="toast-container"></div>
+
+<script src="../js/theme.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

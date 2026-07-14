@@ -1,0 +1,88 @@
+/* ==========================================================================
+   EduGenie Landing Page
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  padding: var(--space-3xl) 0 var(--space-2xl);
+  background: var(--gradient-hero);
+  overflow: hidden;
+}
+.hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-2xl); align-items: center; }
+.hero h1 { font-size: var(--fs-4xl); margin-bottom: var(--space-md); }
+.hero h1 em { font-style: italic; color: var(--color-accent); }
+.hero-desc { font-size: var(--fs-md); max-width: 46ch; margin-bottom: var(--space-lg); }
+.hero-actions { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+
+/* Signature element: annotated "chalkboard" preview panel */
+.hero-panel {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.hero-panel-header { display: flex; align-items: center; gap: var(--space-2xs); margin-bottom: var(--space-sm); }
+.hero-panel-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--color-border); }
+.hero-panel-title { font-family: var(--font-mono); font-size: var(--fs-2xs); color: var(--color-ink-faint); margin-left: var(--space-2xs); }
+.hero-chat-bubble {
+  border-radius: var(--radius-md); padding: var(--space-sm) var(--space-md); margin-bottom: var(--space-sm);
+  font-size: var(--fs-sm); line-height: var(--lh-snug); max-width: 90%;
+  animation: bubbleIn var(--duration-slow) var(--ease-out) both;
+}
+.hero-chat-bubble.user { background: var(--color-bg-elevated-2); margin-left: auto; }
+.hero-chat-bubble.ai { background: rgba(242, 184, 75, 0.12); border: 1px solid rgba(242, 184, 75, 0.25); }
+.hero-chat-bubble:nth-child(2) { animation-delay: 0.15s; }
+.hero-chat-bubble:nth-child(3) { animation-delay: 0.35s; }
+@keyframes bubbleIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.hero-underline-svg { position: absolute; opacity: 0.5; pointer-events: none; }
+
+/* ---------- Section wrapper ---------- */
+.section { padding: var(--space-2xl) 0; }
+.section-head { max-width: 640px; margin-bottom: var(--space-xl); }
+.section-alt { background: var(--color-bg-elevated); border-top: 1px solid var(--color-border-soft); border-bottom: 1px solid var(--color-border-soft); }
+
+/* ---------- Features grid ---------- */
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+
+/* ---------- How it works ---------- */
+.steps-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); counter-reset: step; }
+.step-card { position: relative; padding-top: var(--space-md); }
+.step-number {
+  font-family: var(--font-display); font-size: var(--fs-2xl); color: var(--color-accent);
+  opacity: 0.5; margin-bottom: var(--space-2xs); display: block;
+}
+.step-connector { position: absolute; top: 2.3rem; left: 100%; width: var(--space-md); height: 1px; background: var(--color-border); }
+
+/* ---------- Benefits ---------- */
+.benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+.benefit-card { border-top: 3px solid var(--color-accent); }
+.benefit-card:nth-child(2) { border-top-color: var(--color-teal); }
+.benefit-card:nth-child(3) { border-top-color: var(--color-coral); }
+
+/* ---------- CTA ---------- */
+.cta-section {
+  text-align: center; padding: var(--space-2xl) var(--space-md);
+  background: var(--gradient-hero);
+  border-radius: var(--radius-lg);
+  margin: 0 auto var(--space-2xl);
+  max-width: var(--container-max);
+}
+.cta-section h2 { max-width: 24ch; margin: 0 auto var(--space-sm); }
+
+/* ---------- Footer ---------- */
+.footer { border-top: 1px solid var(--color-border-soft); padding: var(--space-2xl) 0 var(--space-lg); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: var(--space-lg); margin-bottom: var(--space-xl); }
+.footer-col h4 { font-size: var(--fs-sm); color: var(--color-ink-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-sm); }
+.footer-col a { display: block; color: var(--color-ink-muted); font-size: var(--fs-sm); margin-bottom: var(--space-xs); transition: color var(--duration-fast); }
+.footer-col a:hover { color: var(--color-accent); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-md); border-top: 1px solid var(--color-border-soft); font-size: var(--fs-xs); color: var(--color-ink-faint); flex-wrap: wrap; gap: var(--space-sm); }
+
+@media (max-width: 960px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .features-grid, .steps-row, .benefits-grid { grid-template-columns: 1fr; }
+  .step-connector { display: none; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}

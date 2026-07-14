@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — EduGenie</title>
+<script>(function(){var t=localStorage.getItem('edugenie_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell" id="app-shell-root"></div>
+
+<template id="tpl-content">
+  <div class="page-header">
+    <div>
+      <h2>Welcome back, <span data-user-name>there</span> 👋</h2>
+      <p>Here's where your learning stands today.</p>
+    </div>
+  </div>
+
+  <div class="stat-grid" id="statGrid">
+    <div class="card stat-card"><div class="skeleton" style="height:44px;"></div></div>
+    <div class="card stat-card"><div class="skeleton" style="height:44px;"></div></div>
+    <div class="card stat-card"><div class="skeleton" style="height:44px;"></div></div>
+    <div class="card stat-card"><div class="skeleton" style="height:44px;"></div></div>
+  </div>
+
+  <h3>Quick actions</h3>
+  <div class="quick-actions-grid">
+    <a href="assistant.html" class="card card-hover quick-action">
+      <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 18h.01M9.5 9a2.5 2.5 0 015 0c0 1.5-2 2-2.5 3.5M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg></div>
+      <div style="font-size:var(--fs-sm);font-weight:600;">Ask EduGenie</div>
+    </a>
+    <a href="concept-explainer.html" class="card card-hover quick-action">
+      <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4-8 4-8-4 8-4zM4 11l8 4 8-4M4 15l8 4 8-4"/></svg></div>
+      <div style="font-size:var(--fs-sm);font-weight:600;">Explain a Concept</div>
+    </a>
+    <a href="quiz.html" class="card card-hover quick-action">
+      <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+      <div style="font-size:var(--fs-sm);font-weight:600;">Generate Quiz</div>
+    </a>
+    <a href="summarizer.html" class="card card-hover quick-action">
+      <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg></div>
+      <div style="font-size:var(--fs-sm);font-weight:600;">Summarize Text</div>
+    </a>
+    <a href="learning-path.html" class="card card-hover quick-action">
+      <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+      <div style="font-size:var(--fs-sm);font-weight:600;">Create Learning Path</div>
+    </a>
+  </div>
+
+  <div class="dashboard-columns">
+    <div class="card">
+      <h3>Recent activity</h3>
+      <div id="recentActivity">
+        <div class="skeleton" style="height:20px;margin-bottom:10px;"></div>
+        <div class="skeleton" style="height:20px;margin-bottom:10px;"></div>
+        <div class="skeleton" style="height:20px;"></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>AI study recommendations</h3>
+      <div id="recommendations">
+        <div class="skeleton" style="height:20px;margin-bottom:10px;"></div>
+        <div class="skeleton" style="height:20px;"></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<div id="toast-container"></div>
+
+<script src="../js/theme.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/dashboard.js"></script>
+</body>
+</html>
